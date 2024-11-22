@@ -1,0 +1,94 @@
+$color1: #222831;
+$color2: #393E46;
+$color3: #FFD369;
+$color4: #EEEEEE;
+$color5: #000000;
+$color6: #79A3B1;
+$color7: #FCF8EC;
+$color8: #456268;
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 16.5%;
+    box-sizing: border-box;
+    color: $color4;
+}
+
+.page-wrapper {
+    background-color: $color5;
+    .header-wrapper{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 0px 20px;
+        background-color: $color5;
+        .header-container{
+            // border-bottom: 1px solid $color3;
+            padding: 20px 0px;
+            .logo-container{
+                font-size: 1.5rem;
+                font-size: 600;
+                color: $color3;
+            }
+        }
+    }
+    .page-container{
+        display: flex;
+        .nav-wrapper{
+            padding-top: 75px;
+            height: 100vh;
+            width: 250px;
+            border-radius: 5px;
+            border-right: 2px solid $color2;
+            .nav-container{
+                padding: 0px 0px;
+                .logo-container{
+                    font-size: 1.8rem;
+                }
+                .nav-options-wrapper{
+                    padding: 0px 0px;
+                    .nav-menu{
+                        font-size: 1.2rem;
+                        padding: 15px 10px;
+                        transition: 0.2s;
+                        cursor: pointer;
+                        &.active{
+                            transition: 0.2s;
+                            border: 1px solid $color3;
+                            background-color: $color3;
+                            color: $color5;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .main-wrapper{
+            padding-top: 75px;
+            height: 100vh;
+            width: 100%;
+            overflow-y: auto;
+            .chart-wrapper{
+                padding: 20px 0px;
+                justify-content: center;
+                align-items: baseline;
+                min-height: 100%;
+            }
+            .map-wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .map-container{
+                    border: 2px solid $color6;
+                    border-radius: 5px;
+                }
+                
+            }
+        }
+    }
+}
