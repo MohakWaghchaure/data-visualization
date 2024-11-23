@@ -21,7 +21,8 @@ const MapComponent = () => {
             .select("#us-map")
             .append("svg")
             .attr("width", width)
-            .attr("height", height);
+            .attr("height", height)
+            .style("background-color", "#222831");
 
         // Tooltip div
         const tooltip = d3
@@ -81,12 +82,10 @@ const MapComponent = () => {
                     tooltip.style("visibility", "hidden");
                 })
                 .on("click", function (event, d) {
-                    // Reset the color of all states back to the default
                     mapGroup.selectAll("path").attr("fill", "#D0E8F2");
 
-                    // Toggle the clicked state color between red and default
                     const currentColor = d3.select(this).attr("fill");
-                    const newColor = currentColor === "#D0E8F2" ? "#FFD369" : "#D0E8F2"; // Toggle between gray and red
+                    const newColor = currentColor === "#D0E8F2" ? "#FFD369" : "#D0E8F2";
                     d3.select(this).attr("fill", newColor); // Change the clicked state fill color
                 });
 

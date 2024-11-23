@@ -12,7 +12,7 @@ const DivergingBarChart = () => {
             if (!data) return;
 
             // Set dimensions
-            const margin = { top: 20, right: 30, bottom: 40, left: 40 };
+            const margin = { top: 20, right: 100, bottom: 40, left: 100 };
             const width = 800 - margin.left - margin.right;
             const height = 400 - margin.top - margin.bottom;
 
