@@ -47,6 +47,7 @@ const MapComponent = () => {
             .style("border", "2px solid #79A3B1")
             .style("color", "#456268")
             .style("padding", "5px")
+            .style("text-align", "left")
             .style("font-size", "0.8rem")
             .style("border-radius", "3px")
             .style("pointer-events", "none");

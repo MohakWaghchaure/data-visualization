@@ -14,7 +14,7 @@ export default function MainSection() {
       </div> */}
       <div className="chart-wrapper">
         <div className="title">Interactive US Map with State-Wise Population Data</div>
-        <div className="description">This map provides a visual representation of the United States, allowing users to explore population estimates for each state interactively. Hovering over a state displays a tooltip with detailed population statistics, while clicking on a state highlights it and showcases its population data in a separate panel.</div>
+        <div className="description">This map lets you explore population estimates across US states interactively, Perfect for understanding and comparing state-wise population data at a glance. ( Zoom, Click, Hover, Pan )</div>
         <MapComponent></MapComponent>
       </div>
       {/* <div className="chart-wrapper">
