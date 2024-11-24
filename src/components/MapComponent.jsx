@@ -34,7 +34,7 @@ const MapComponent = () => {
             .append("svg")
             .attr("width", width)
             .attr("height", height)
-            .style("background-color", "#222831");
+            .style("background", "#101317");
 
         // Tooltip div
         const tooltip = d3
@@ -134,7 +134,7 @@ const MapComponent = () => {
                 <div id="us-map"></div>
             </div>
             <div className="data-wrapper">
-                {!selectedStateData[0] && <div className="selection-overlay">Please select any state from the map to view the population values from your 2020 to 2023</div>}
+                {!selectedStateData[0] && <div className="selection-overlay">Please select any state from the map to view the population values from 2020 to 2023</div>}
                 <div className="state-name">State: <span className="value">{selectedStateData[0]}</span></div>
                 <div className="population-count">2020 Estimates Base: <span className="value">{selectedStateData[1]?.ESTIMATESBASE2020}</span></div>
                 <div className="population-count">Population in 2020: <span className="value">{selectedStateData[1]?.POPESTIMATE2020}</span></div>

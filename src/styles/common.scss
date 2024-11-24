@@ -4,7 +4,7 @@ $color3: #FFD369;
 $color4: #EEEEEE;
 $color5: #000000;
 $color6: #79A3B1;
-$color7: #FCF8EC;
+$color7: #79A3B1;
 $color8: #456268;
 
 body {
@@ -44,6 +44,7 @@ body {
             padding: 20px 20px;
             border-right: 2px solid $color1;
             position: relative;
+            background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
             .btn-expand{
                 position: absolute;
                 height: 28px;
@@ -156,6 +157,7 @@ body {
                         min-width: 320px;
                         position: relative;
                         text-align: left;
+                        background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
                         .selection-overlay{
                             position: absolute;
                             top: 0;
