@@ -15,9 +15,9 @@ export default function MainSection() {
       <div className="chart-wrapper">
         <MapComponent></MapComponent>
       </div>
-      <div className="chart-wrapper">
+      {/* <div className="chart-wrapper">
         <DivergingBarChart></DivergingBarChart>
-      </div>
+      </div> */}
     </div>
   );
 }

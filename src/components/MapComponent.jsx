@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as d3 from "d3";
-import * as topojson from "topojson-client"; 
-import statePopulation from '../../public/data/population-data.json';
+import * as topojson from "topojson-client";
+import statePopulation from '../../public/data/population-data-new.json';
 import React from "react";
 
+const stateData = [
+    String,
+    {
+        ESTIMATESBASE2020: String,
+        POPESTIMATE2020: String,
+        POPESTIMATE2021: String,
+        POPESTIMATE2022: String,
+        POPESTIMATE2023: String
+    }
+]
+
 const MapComponent = () => {
+    const [selectedStateData, setSelectedStateData] = useState([]);
     useEffect(() => {
         // Map dimensions
         const width = 900;
@@ -61,15 +73,16 @@ const MapComponent = () => {
                 .style("cursor", "pointer") // Add cursor pointer on hover
                 .on("mouseover", function (event, d) {
                     const stateName = d.properties.name; // Get state name
-                    const stateData = Object.values(statePopulation).find(
-                        (state) => state.state === stateName
+                    const stateData = Object.entries(statePopulation).find(
+                        ([stateNamekey]) => stateNamekey === stateName
                     );
+                    // console.log(stateName, stateData);
 
                     if (stateData) {
                         tooltip
                             .style("visibility", "visible")
                             .html(
-                                `<strong>${stateName}</strong><br/>Population: ${stateData["2020_census"]}`
+                                `<strong>${stateData[0]}</strong><br/>Population: ${stateData[1].ESTIMATESBASE2020}`
                             );
                     }
                 })
@@ -86,7 +99,12 @@ const MapComponent = () => {
 
                     const currentColor = d3.select(this).attr("fill");
                     const newColor = currentColor === "#D0E8F2" ? "#FFD369" : "#D0E8F2";
-                    d3.select(this).attr("fill", newColor); // Change the clicked state fill color
+                    d3.select(this).attr("fill", newColor);
+                    const stateName = d.properties.name; // Get state name
+                    const stateData = Object.entries(statePopulation).find(
+                        ([stateNamekey]) => stateNamekey === stateName
+                    );
+                    setSelectedStateData(stateData);
                 });
 
             // Create a zoom behavior that handles both zoom and pan
@@ -103,15 +121,26 @@ const MapComponent = () => {
         });
     }, []);
 
+    useEffect(() => {
+        if (selectedStateData) {
+            
+        }
+    }, [selectedStateData])
+
     return (
         <div className='map-wrapper'>
             <div className='map-container'>
                 <div id="us-map"></div>
             </div>
-            {/* <div className="data-wrapper">
-                <div>State: California</div>
-                <div>Population: 2345678</div>
-            </div> */}
+            <div className="data-wrapper">
+                {!selectedStateData[0] && <div className="selection-overlay">Please select any state from the map to view the population values from your 2020 to 2023</div>}
+                <div className="state-name">State: <span className="value">{selectedStateData[0]}</span></div>
+                <div className="population-count">2020 Estimates Base: <span className="value">{selectedStateData[1]?.ESTIMATESBASE2020}</span></div>
+                <div className="population-count">Population in 2020: <span className="value">{selectedStateData[1]?.POPESTIMATE2020}</span></div>
+                <div className="population-count">Population in 2021: <span className="value">{selectedStateData[1]?.POPESTIMATE2021}</span></div>
+                <div className="population-count">Population in 2022: <span className="value">{selectedStateData[1]?.POPESTIMATE2022}</span></div>
+                <div className="population-count">Population in 2023: <span className="value">{selectedStateData[1]?.POPESTIMATE2023}</span></div>
+            </div>
         </div>
     );
 };

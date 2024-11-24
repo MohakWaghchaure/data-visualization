@@ -137,6 +137,56 @@ body {
                     border: 2px solid $color6;
                     border-radius: 5px;
                 }
+                .data-wrapper{
+                    border: 2px solid $color6;
+                    border-radius: 5px;
+                    margin-left: 20px;
+                    padding: 10px 20px;
+                    min-width: 300px;
+                    position: relative;
+                    .selection-overlay{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $color5;
+                        color: $color3;
+                        font-size: 1.1rem;
+                        text-align: center;
+                        padding: 20px 40px;
+                        opacity: 0.9;
+                        transition: 0.2s;
+                    }
+                    .state-name{
+                        font-size: 1.5rem;
+                        color: $color3;
+                        padding: 20px 0px;
+                        margin-bottom: 10px;
+                        border-bottom: 1px solid $color3;
+                        .value{
+                            font-weight: 600;
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .population-count{
+                        font-size: 1rem;
+                        font-weight: 500;
+                        padding: 10px 0px;
+                        color: $color6;
+                        .value{
+                            font-weight: 600;
+                            border-radius: 5px;
+                            padding: 5px 7px;
+                            background-color: $color3;
+                            color: $color5;
+                            margin-left: 5px;
+                        }
+                    }
+                }
                 
             }
         }
