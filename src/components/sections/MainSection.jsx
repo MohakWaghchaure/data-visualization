@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import MapComponent from "@/components/MapComponent";
-import StackedAreaChart from "@/components/StackedAreaChart";
-import StackedBarChart from "@/components/StackedBarChart";
-import WordCloud from "@/components/WordCloud";
-import PolarClock from "./PolarClock";
+import MapComponent from "@/components/charts/MapComponent";
+import StackedAreaChart from "@/components/charts/StackedAreaChart";
+import StackedBarChart from "@/components/charts/StackedBarChart";
+import WordCloud from "@/components/charts/WordCloud";
+import PolarClock from "@/components/charts/PolarClock";
 
 export default function MainSection() {
 

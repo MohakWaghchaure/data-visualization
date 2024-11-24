@@ -1,7 +1,5 @@
 "use client";
 
-import MapComponent from "@/components/MapComponent";
-import DivergingBarChart from "@/components/DivergingBarChart";
 import mapIcon from '@/public/icons/map.png';
 import stackedBarIcon from '@/public/icons/stacked-bar.png';
 import barChart from '@/public/icons/bar-chart.png';
@@ -35,6 +33,9 @@ export default function Navigation() {
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Word Cloud</div>
                     </div>
+                </div>
+                <div className='about-button'>
+                    <button>About this project</button>
                 </div>
             </div>
         </div>

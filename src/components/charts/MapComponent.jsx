@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
-import statePopulation from '../../public/data/population-data-new.json';
+import statePopulation from '../../../public/data/population-data-new.json';
 import React from "react";
 
 const stateData = [
