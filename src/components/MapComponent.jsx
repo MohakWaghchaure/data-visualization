@@ -21,7 +21,7 @@ const MapComponent = () => {
     const [selectedStateData, setSelectedStateData] = useState([]);
     useEffect(() => {
         // Map dimensions
-        const width = 900;
+        const width = 850;
         const height = 500;
 
         // Create a projection for the map (Albers USA projection)
