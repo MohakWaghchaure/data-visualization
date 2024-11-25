@@ -9,17 +9,27 @@ import PolarClock from "../charts/PolarClock";
 
 export default function MainSection({selectedNavOption}) {
   // console.log("selectedNavOption", selectedNavOption)
-  const pacificTime = new Date(Date.now() + -8 * 60 * 60 * 1000); // UTC-8
-  const easternTime = new Date(Date.now() + -5 * 60 * 60 * 1000); // UTC-5
-  const greenwichMeanTime = new Date(Date.now() + 0 * 60 * 60 * 1000); // UTC+0
-  const centralEuropeanTime = new Date(Date.now() + 1 * 60 * 60 * 1000); // UTC+1
-  const indiaStandardTime = new Date(Date.now() + 5.5 * 60 * 60 * 1000); // UTC+5:30
-  const chinaStandardTime = new Date(Date.now() + 8 * 60 * 60 * 1000);
-  const japanStandardTime = new Date(Date.now() + 9 * 60 * 60 * 1000); // UTC+9
-  const australianEasternTime = new Date(Date.now() + 10 * 60 * 60 * 1000); // UTC+10
+  
+  const getTimeInZone = (utcOffset) => {
+    const localOffset = new Date().getTimezoneOffset() / 60; // in hours, with opposite sign
+    const offsetDifference = utcOffset - localOffset; // difference between the current local offset and the target UTC offset
+    return new Date(Date.now() + offsetDifference * 60 * 60 * 1000); // adjust the time based on the difference
+  };
+  
+  // Timezone offsets from UTC
+  const pacificTime = getTimeInZone(-8);  // UTC-8
+  const easternTime = getTimeInZone(-5);  // UTC-5
+  const greenwichMeanTime = getTimeInZone(0);  // UTC+0
+  const centralEuropeanTime = getTimeInZone(1);  // UTC+1
+  const indiaStandardTime = getTimeInZone(5.5);  // UTC+5:30
+  const chinaStandardTime = getTimeInZone(8);  // UTC+8
+  const japanStandardTime = getTimeInZone(9);  // UTC+9
+  const australianEasternTime = getTimeInZone(10);  // UTC+10
+
+
   return (
     <div className="main-wrapper">
-      {/* <div className="chart-wrapper" id="mapComponent">
+      <div className="chart-wrapper" id="mapComponent">
         <div className="title">Interactive US Map with State-Wise Population Data</div>
         <div className="description">Discover an interactive map that visualizes U.S. state population estimates from 2020 to 2023! With intuitive features like zoom, click, hover, and pan, easily explore state-wise demographic trends. This tool offers a detailed and insightful perspective on population shifts across the nation over the past few years.</div>
         <MapComponent></MapComponent>
@@ -38,10 +48,10 @@ export default function MainSection({selectedNavOption}) {
         <div className="title">Word Cloud Visualization</div>
         <div className="description">Explore an interactive Word Cloud that visually represents a collection of words with varying sizes and colors. The words' sizes reflect their importance or frequency, while the colors add visual distinction.</div>
         <WordCloud></WordCloud>
-      </div> */}
-      <div className="chart-wrapper">
-      <div className="title">Clocks</div>
-      <div className="description">Discover an interactive map that visualizes U.S. state population estimates from 2020 to 2023! With intuitive features like zoom, click, hover, and pan, easily explore state-wise demographic trends. This tool offers a detailed and insightful perspective on population shifts across the nation over the past few years.</div>
+      </div>
+      <div className="chart-wrapper" id="polarClock">
+      <div className="title">Polar Clock with Global Timezones</div>
+      <div className="description">Explore a vibrant polar clock showcasing the current time through animated arcs. View times across major global timezones, including Pacific, Eastern, and GMT.</div>
         <div className="clock-wrapper">
           <PolarClock title={'Pacific Time'} time={pacificTime}></PolarClock>
           <PolarClock title={'Eastern Time'} time={easternTime}></PolarClock>

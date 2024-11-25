@@ -29,11 +29,11 @@ export default function Navigation() {
                 <div className="nav-options-wrapper">
                     <div className={(navOption=='mapComponent')? "nav-menu active" : "nav-menu"} onClick={() => handleScroll('mapComponent')} >
                         <div className="icon-wrap"><Image src={mapIcon} height={20} width={20} alt={'map'}></Image></div>
-                        <div className="nav-text">Map view</div>
+                        <div className="nav-text">Map View</div>
                     </div>
                     <div className={(navOption=='stackedBarChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedBarChart')}>
                         <div className="icon-wrap"><Image src={stackedBarIcon} height={20} width={20} alt={'map'}></Image></div>
-                        <div className="nav-text">Stacked bar chart</div>
+                        <div className="nav-text">Stacked Bar Chart</div>
                     </div>
                     <div className={(navOption=='stackedAreaChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedAreaChart')}>
                         <div className="icon-wrap"><Image src={barChart} height={20} width={20} alt={'map'}></Image></div>
