@@ -6,17 +6,6 @@ import * as topojson from "topojson-client";
 import statePopulation from '../../../public/data/population-data-new.json';
 import React from "react";
 
-const stateData = [
-    String,
-    {
-        ESTIMATESBASE2020: String,
-        POPESTIMATE2020: String,
-        POPESTIMATE2021: String,
-        POPESTIMATE2022: String,
-        POPESTIMATE2023: String
-    }
-]
-
 const MapComponent = () => {
     const [selectedStateData, setSelectedStateData] = useState([]);
     useEffect(() => {

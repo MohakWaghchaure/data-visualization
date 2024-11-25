@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Navigation from "@/components/ui/Navigation";
-import MainSection from "@/components/sections/MainSection";
+import Navigation from "../components/ui/Navigation";
+import MainSection from "../components/sections/MainSection";
 
 export default function Home() {
   // const [expandNav, seExpandNav] = useState(true);
@@ -24,6 +24,11 @@ export default function Home() {
   //   fetchLambda();
   // }, [])
 
+  const [selectedNav, getSelectedNav] = useState('');
+
+  useEffect(()=>{
+    // console.log("selectedNav", selectedNav);
+  },[selectedNav])
   return (
     <div className="page-wrapper">
       <div className="container-fluid page-container">
