@@ -1,11 +1,14 @@
-import { useEffect, useRef } from "react";
+
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import cloud from "d3-cloud";
 
 const WordCloud = () => {
   const chartRef = useRef(null);
 
-  const words = [
+  const [words, setWords] = useState([
     { text: "Full Stack", size: 50, color: "#EEEEEE" },
     { text: "Backend", size: 40, color: "#393E46" },
     { text: "Frontend", size: 35, color: "#FFD369" },
@@ -63,27 +66,48 @@ const WordCloud = () => {
     { text: "Accessibility", size: 18, color: "#79A3B1" },
     { text: "Responsive Design", size: 15, color: "#EEEEEE" },
     { text: "Agile Development", size: 45, color: "#222831" },
-  { text: "Continuous Integration", size: 40, color: "#393E46" },
-  { text: "SQL", size: 38, color: "#FFD369" },
-  { text: "NoSQL", size: 35, color: "#EEEEEE" },
-  { text: "Middleware", size: 33, color: "#79A3B1" },
-  { text: "JSON", size: 30, color: "#79A3B1" },
-  { text: "XML", size: 28, color: "#79A3B1" },
-  { text: "AJAX", size: 26, color: "#222831" },
-  { text: "HTTP", size: 24, color: "#393E46" },
-  { text: "WebSockets", size: 22, color: "#FFD369" },
-  { text: "OAuth", size: 20, color: "#EEEEEE" },
-  { text: "Session Management", size: 18, color: "#79A3B1" },
-  { text: "Stateful Services", size: 16, color: "#79A3B1" },
-  { text: "Asynchronous Programming", size: 14, color: "#79A3B1" },
-  { text: "Event-Driven Architecture", size: 12, color: "#222831" },
-  { text: "Cross-Origin Resource Sharing", size: 10, color: "#393E46" },
-  { text: "Content Delivery Network", size: 8, color: "#FFD369" },
-  { text: "Single Page Application", size: 6, color: "#EEEEEE" },
-  { text: "Progressive Web App", size: 4, color: "#79A3B1" },
-  { text: "Server-Side Rendering", size: 2, color: "#222831" },
-  ];
-  
+    { text: "Continuous Integration", size: 40, color: "#393E46" },
+    { text: "SQL", size: 38, color: "#FFD369" },
+    { text: "NoSQL", size: 35, color: "#EEEEEE" },
+    { text: "Middleware", size: 33, color: "#79A3B1" },
+    { text: "JSON", size: 30, color: "#79A3B1" },
+    { text: "XML", size: 28, color: "#79A3B1" },
+    { text: "AJAX", size: 26, color: "#222831" },
+    { text: "HTTP", size: 24, color: "#393E46" },
+    { text: "WebSockets", size: 22, color: "#FFD369" },
+    { text: "OAuth", size: 20, color: "#EEEEEE" },
+    { text: "Session Management", size: 18, color: "#79A3B1" },
+    { text: "Stateful Services", size: 16, color: "#79A3B1" },
+    { text: "Asynchronous Programming", size: 14, color: "#79A3B1" },
+    { text: "Event-Driven Architecture", size: 12, color: "#222831" },
+    { text: "Cross-Origin Resource Sharing", size: 10, color: "#393E46" },
+    { text: "Content Delivery Network", size: 8, color: "#FFD369" },
+    { text: "Single Page Application", size: 6, color: "#EEEEEE" },
+    { text: "Progressive Web App", size: 4, color: "#79A3B1" },
+    { text: "Server-Side Rendering", size: 2, color: "#222831" },
+
+
+
+    { text: "Full Stack", size: 50, color: "#EEEEEE" },
+    { text: "Backend", size: 40, color: "#393E46" },
+    { text: "Frontend", size: 35, color: "#FFD369" },
+    // Add more words here...
+  ]);
+
+  const handleAddWord = (e) => {
+    e.preventDefault(); // Prevent form submission from reloading the page
+
+    const newWord = {
+      text: e.target.elements.word.value,  // Access 'word' input
+      size: parseInt(e.target.elements.size.value),  // Access 'size' input and convert it to a number
+      color: e.target.elements.color.value,  // Access 'color' input
+    };
+
+    // Add new word to the words array (assumed that `words` is a state variable)
+    setWords((prevWords) => [...prevWords, newWord]);
+
+    e.target.reset(); // Reset the form
+  };
 
   useEffect(() => {
     // Clear previous word cloud
@@ -94,7 +118,7 @@ const WordCloud = () => {
 
     const layout = cloud()
       .size([width, height])
-      .words(words.map((d) => ({ text: d.text, size: d.size, color: d.color})))
+      .words(words.map((d) => ({ text: d.text, size: d.size, color: d.color })))
       .padding(5)
       .rotate(() => (Math.random() > 0.5 ? 90 : 0)) // Rotate 50% of words
       .fontSize((d) => d.size)
@@ -124,7 +148,52 @@ const WordCloud = () => {
     }
   }, [words]);
 
-  return <div ref={chartRef}></div>;
+  return (
+    <div className="word-cloud-wrapper">
+      <div ref={chartRef} className="cloud-container"></div>
+      <div className="features-wrapper">
+        <div className="features">
+          <div>Key features</div>
+          <ul>
+            <li>Dynamic Sizing based on word significance.</li>
+            <li>Random Rotations for a unique look.</li>
+            <li>Hover and Click interactions to highlight words.</li>
+            <li>Interactive Updates to modify the cloud in real-time.</li>
+          </ul>
+        </div>
+        <div className="new-word">
+          <form onSubmit={handleAddWord}>
+            {/* <div className="title">Add new word to the cloud</div> */}
+            <div className="form-field">
+              <input
+                type="text"
+                name="word"
+                placeholder="Add new word to the cloud"
+              />
+            </div>
+            <div className="form-field">
+              <select name="size" placeholder="Size">
+                <option value="10">Small</option>
+                <option value="25">Medium</option>
+                <option value="40">Large</option>
+                <option value="50">Extra Large</option>
+              </select>
+            </div>
+
+            <div className="form-field">
+              <select name="color" placeholder="Color">
+                <option value="#FFD369">Yellow</option>
+                <option value="#EEEEEE">White</option>
+                <option value="#393E46">Gray</option>
+                <option value="#79A3B1">Blue</option>
+              </select>
+            </div>
+            <button type="submit" className="btn-submit">Add new word</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
 };
 
 export default WordCloud;

@@ -20,25 +20,30 @@ body {
 
 .page-wrapper {
     background-color: $color5;
-    .header-wrapper{
+
+    .header-wrapper {
         position: fixed;
         top: 0px;
         left: 0px;
         width: 100%;
         padding: 0px 20px;
+
         // background-color: $color1;
-        .header-container{
+        .header-container {
             padding: 20px 0px;
-            .logo-container{
+
+            .logo-container {
                 font-size: 1.5rem;
                 font-size: 600;
                 color: $color3;
             }
         }
     }
-    .page-container{
+
+    .page-container {
         display: flex;
-        .nav-wrapper{
+
+        .nav-wrapper {
             height: 100vh;
             width: auto;
             min-width: 250px;
@@ -46,7 +51,8 @@ body {
             border-right: 2px solid $color1;
             position: relative;
             background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
-            .btn-expand{
+
+            .btn-expand {
                 position: absolute;
                 height: 28px;
                 width: 28px;
@@ -57,22 +63,27 @@ body {
                 cursor: pointer;
                 display: none;
             }
-            .nav-container{
+
+            .nav-container {
                 padding: 0px 0px;
                 position: relative;
                 height: 100%;
-                .logo-wrapper{
+
+                .logo-wrapper {
                     padding: 20px 0px;
                     padding-bottom: 50px;
-                    .logo-text{
+
+                    .logo-text {
                         color: $color3;
                         font-size: 1.5rem;
                         font-weight: 600;
                     }
                 }
-                .nav-options-wrapper{
+
+                .nav-options-wrapper {
                     padding: 0px 0px;
-                    .nav-menu{
+
+                    .nav-menu {
                         font-size: 1rem;
                         padding: 12px 12px;
                         transition: 0.2s;
@@ -83,30 +94,34 @@ body {
                         color: $color6;
                         white-space: nowrap;
                         transition: 0.2s;
-                        &.active{
+
+                        &.active {
                             transition: 0.2s;
                             background-color: $color1;
                             color: $color4;
                             border-radius: 10px;
                             font-weight: 600;
                         }
-                        &:hover{
+
+                        &:hover {
                             color: $color3;
                             transition: 0.2s;
                         }
-                        .icon-wrap{
 
-                        }
-                        .nav-text{
+                        .icon-wrap {}
+
+                        .nav-text {
                             padding: 0px 10px;
                         }
                     }
                 }
-                .about-button{
+
+                .about-button {
                     position: absolute;
                     bottom: 0px;
                     width: 100%;
-                    button{
+
+                    button {
                         width: 100%;
                         padding: 10px 10px;
                         border: 0px;
@@ -117,12 +132,14 @@ body {
                         color: $color4;
                         transition: 0.2s;
                         cursor: pointer;
-                        &:hover{
+
+                        &:hover {
                             background-color: $color7;
                             color: $color5;
                             transition: 0.2s;
                         }
-                        &.active{
+
+                        &.active {
                             background-color: $color7;
                             color: $color5;
                             transition: 0.2s;
@@ -131,30 +148,37 @@ body {
                 }
             }
         }
-        .main-wrapper{
-            padding-top: 20px;
+
+        .main-wrapper {
             height: 100vh;
             width: 100%;
             overflow-y: auto;
             background-color: $color5;
-            .chart-wrapper{
-                padding: 20px 40px;
+
+            // overflow: hidden;
+            .chart-wrapper {
+                padding: 40px 40px;
                 text-align: center;
                 min-height: 100%;
-                .table-wrapper{
-                    .table{
+
+                .table-wrapper {
+                    .table {
                         border: 1px solid $color2;
                         border-radius: 5px;
-                        tbody, thead{
-                            th{
+
+                        tbody,
+                        thead {
+                            th {
                                 font-size: 1rem;
                             }
-                            tr{
-                                th{
+
+                            tr {
+                                th {
                                     padding: 10px 10px;
                                     font-size: 1rem;
                                 }
-                                td{
+
+                                td {
                                     padding: 10px 10px;
                                     font-size: 1rem;
                                 }
@@ -162,7 +186,8 @@ body {
                         }
                     }
                 }
-                .title{
+
+                .title {
                     width: 100%;
                     font-size: 1.8rem;
                     font-weight: 600;
@@ -170,22 +195,26 @@ body {
                     color: $color6;
                     padding-bottom: 20px;
                 }
-                .description{
+
+                .description {
                     width: 100%;
                     font-size: 1.1rem;
                     text-align: left;
                     padding-bottom: 40px;
                     color: $color4;
                 }
-                .map-wrapper{
+
+                .map-wrapper {
                     display: flex;
                     align-items: start;
                     justify-content: start;
-                    .map-container{
+
+                    .map-container {
                         border: 2px solid $color6;
                         border-radius: 5px;
                     }
-                    .data-wrapper{
+
+                    .data-wrapper {
                         border: 2px solid $color6;
                         border-radius: 5px;
                         margin-left: 25px;
@@ -194,7 +223,8 @@ body {
                         position: relative;
                         text-align: left;
                         background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
-                        .selection-overlay{
+
+                        .selection-overlay {
                             position: absolute;
                             top: 0;
                             left: 0;
@@ -211,7 +241,8 @@ body {
                             opacity: 0.9;
                             transition: 0.2s;
                         }
-                        .state-name{
+
+                        .state-name {
                             font-size: 1.5rem;
                             color: $color3;
                             padding-bottom: 15px;
@@ -219,17 +250,20 @@ body {
                             margin-bottom: 15px;
                             font-weight: 500;
                             border-bottom: 1px solid $color3;
-                            .value{
+
+                            .value {
                                 font-weight: 600;
                                 font-size: 1.7rem;
                             }
                         }
-                        .population-count{
+
+                        .population-count {
                             font-size: 1rem;
                             font-weight: 500;
                             padding: 12px 0px;
                             color: $color6;
-                            .value{
+
+                            .value {
                                 font-weight: 600;
                                 border-radius: 5px;
                                 padding: 5px 7px;
@@ -239,10 +273,93 @@ body {
                             }
                         }
                     }
-                    
+
+                }
+
+                .word-cloud-wrapper {
+                    .cloud-container{
+                        padding: 40px 40px;
+                    }
+                    .features-wrapper {
+                        display: flex;
+                        justify-content: space-around;
+                        padding: 40px 20px;
+                        .features {
+                            text-align: left;
+                            border: 2px solid #79A3B1;
+                            border-radius: 5px;
+                            padding: 20px 20px;
+                            min-width: 320px;
+                            position: relative;
+                            text-align: left;
+                            background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);  
+                            max-height: fit-content;
+                            div {
+                                font-size: 1.2rem;
+                                color: $color4;
+                                font-weight: 600;
+                                padding: 10px 10px;
+                            }
+
+                            ul {
+                                padding: 5px 20px;
+
+                                li {
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    color: $color6;
+                                    padding: 5px 10px;
+                                }
+                            }
+                        }
+                        .new-word{
+                            text-align: left;
+                            border: 2px solid #79A3B1;
+                            border-radius: 5px;
+                            padding: 25px 25px;
+                            min-width: 320px;
+                            position: relative;
+                            text-align: left;
+                            background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%); 
+                            .title{
+                                font-size: 1.2rem;
+                                color: $color4;
+                                font-weight: 600;
+                                padding: 15px;
+                                padding-bottom: 20px;
+                            }
+                            .form-field{
+                                width: 100%;
+                                padding: 10px 0px;
+                                input, select{
+                                    width: 100%;
+                                    height: 40px;
+                                    text-decoration: none;
+                                    background-color: $color5;
+                                    border: 0px;
+                                    border-radius: 5px;
+                                    padding: 0px 5px;
+                                    font-size: 1rem;
+                                }
+                            }
+                            .btn-submit{
+                                width: 100%;
+                                padding: 10px 10px;
+                                border: 0px;
+                                border-radius: 5px;
+                                font-size: 0.8rem;
+                                font-weight: 600;
+                                background-color: #222831;
+                                color: #EEEEEE;
+                                transition: 0.2s;
+                                cursor: pointer;
+                                margin-top: 20px;
+                            }
+                        }
+                    }
                 }
             }
-            
+
         }
     }
 }

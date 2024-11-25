@@ -8,8 +8,8 @@ import Image from 'next/image';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 
-export default function Navigation({getSelectedNav}) {
-    const [navOption, setNavOption] = useState('');
+export default function Navigation() {
+    const [navOption, setNavOption] = useState('mapComponent');
     const handleScroll = (sectionAnchor) => {
         if(sectionAnchor){
             setNavOption(sectionAnchor);
@@ -20,8 +20,8 @@ export default function Navigation({getSelectedNav}) {
 
     return (
         <div className="nav-wrapper">
+            <div className="btn-expand"></div>
             <div className="nav-container">
-                <div className="btn-expand"></div>
                 <div className="logo-wrapper">
                     <div className="logo-text">ClearCharts</div>
                 </div>
@@ -42,14 +42,14 @@ export default function Navigation({getSelectedNav}) {
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Word Cloud</div>
                     </div>
-                    <div className={(navOption=='polarClock')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('polarClock')}>
+                    {/* <div className={(navOption=='polarClock')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('polarClock')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Polar Clock</div>
                     </div>
                     <div className={(navOption=='dataTable')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('dataTable')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Datasets</div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="about-button active" onMouseDown={() => handleScroll('aboutProject')}>
                     <button className={(navOption=='aboutProject')? "about-button active" : "about-button"}>About this project</button>
