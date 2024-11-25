@@ -157,7 +157,6 @@ const WordCloud = () => {
           <ul>
             <li>Dynamic Sizing based on word significance.</li>
             <li>Random Rotations for a unique look.</li>
-            <li>Hover and Click interactions to highlight words.</li>
             <li>Interactive Updates to modify the cloud in real-time.</li>
           </ul>
         </div>

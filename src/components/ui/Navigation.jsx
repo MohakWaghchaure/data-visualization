@@ -4,6 +4,7 @@ import mapIcon from '../../public/icons/map.png';
 import stackedBarIcon from '../../public/icons/stacked-bar.png';
 import barChart from '../../public/icons/bar-chart.png';
 import clouds from '../../public/icons/clouds.png';
+import Clock from '../../public/icons/clock.png';
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
@@ -42,11 +43,11 @@ export default function Navigation() {
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Word Cloud</div>
                     </div>
-                    {/* <div className={(navOption=='polarClock')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('polarClock')}>
-                        <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
+                    <div className={(navOption=='polarClock')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('polarClock')}>
+                        <div className="icon-wrap"><Image src={Clock} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Polar Clock</div>
                     </div>
-                    <div className={(navOption=='dataTable')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('dataTable')}>
+                    {/* <div className={(navOption=='dataTable')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('dataTable')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Datasets</div>
                     </div> */}

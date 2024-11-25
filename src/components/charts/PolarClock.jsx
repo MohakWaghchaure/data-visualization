@@ -1,12 +1,12 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 
-const PolarClock = () => {
+const PolarClock = ({title, time}) => {
   const clockRef = useRef(null);
 
   useEffect(() => {
-    const width = 500;
-    const height = 500;
+    const width = 1000;
+    const height = 1000;
     const radius = Math.min(width, height) / 2;
 
     const svg = d3
@@ -21,8 +21,15 @@ const PolarClock = () => {
       .innerRadius((d) => d.innerRadius)
       .outerRadius((d) => d.outerRadius);
 
+    // Function to render clock
     function render() {
-      const now = new Date();
+      const now = time ? new Date(time) : new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+
       const data = [
         {
           startAngle: 0,
@@ -44,26 +51,50 @@ const PolarClock = () => {
         },
       ];
 
+      // Update the arcs
       const paths = svg.selectAll("path").data(data);
 
       paths
         .join("path")
-        .attr("fill", (d, i) => ["#79A3B1", "#EEEEEE", "#FFD369"][i])
+        .attr("fill", (d, i) => ["#79A3B1", "#FFD369", "#EEEEEE"][i])
         .attr("d", arc);
+
+      // Update the central time display
+      const timeText = svg.selectAll("text.center-time").data([timeString]);
+
+      timeText
+        .join("text")
+        .attr("class", "center-time")
+        .attr("text-anchor", "middle")
+        .attr("dy", "0.35em")
+        .style("font-size", "70px")
+        .style("font-weight", "600")
+        .style("fill", "#FFFFFF")
+        .text((d) => d);
     }
 
+    // Update every second
     const interval = d3.interval(() => {
       render();
     }, 1000);
 
     render();
 
+    // Cleanup on unmount
     return () => {
       interval.stop();
     };
   }, []);
 
-  return <svg ref={clockRef}></svg>;
+  return (
+    <div className="clock-container">
+      <div className="timezone">{title}</div>
+      <div className="clock">
+        <svg ref={clockRef}></svg>
+      </div>
+      
+    </div>
+  );
 };
 
 export default PolarClock;

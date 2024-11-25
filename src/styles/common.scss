@@ -276,6 +276,33 @@ body {
 
                 }
 
+                .clock-wrapper{
+                    display: flex;
+                    .clock-container{
+                        text-align: center;
+                        display: block;
+                        padding: 20px 20px;
+                        .timezone{
+                            font-size: 1.1rem;
+                            // background-color: $color7;
+                            color: $color7;
+                            text-align: center;
+                            width: 100%;
+                            border-radius: 5px;
+                            font-weight: 600;
+                            padding: 15px 5px;
+                            text-align: center;
+                        }
+                        .clock{
+                            height: 250px;
+                            width: 250px;
+                            border: 2px solid $color2;
+                            border-radius: 50%;
+                            background: radial-gradient(circle, $color8 0%, $color5 100%);
+                        }
+                    }
+                    
+                }
                 .word-cloud-wrapper {
                     .cloud-container{
                         padding: 40px 40px;
