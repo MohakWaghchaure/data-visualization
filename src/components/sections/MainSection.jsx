@@ -36,8 +36,8 @@ export default function MainSection({ selectedNavOption }) {
         <MapComponent></MapComponent>
       </div>
       <div className="chart-wrapper" id="treemap">
-        <div className="title">Treemap</div>
-        <div className="description"></div>
+        <div className="title">Treemap with State-Wise Population Data</div>
+        <div className="description">Discover an interactive map that visualizes U.S. state population estimates from 2020 to 2023! With intuitive features like zoom, click, hover, and pan, easily explore state-wise demographic trends. This tool offers a detailed and insightful perspective on population shifts across the nation over the past few years.</div>
         <Treemap></Treemap>
       </div>
       {/* <div className="chart-wrapper" id="stackedBarChart">

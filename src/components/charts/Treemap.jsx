@@ -90,9 +90,6 @@ const Treemap = () => {
 
     return (
         <div className='treemap-wrapper'>
-            <div className="treemap">
-                <svg ref={svgRef}></svg>
-            </div>
             <div className="treemap-controls">
                 <label htmlFor="year-select">Select Year: </label>
                 <select
@@ -106,6 +103,9 @@ const Treemap = () => {
                     <option value="POPESTIMATE2021">2021</option>
                     <option value="POPESTIMATE2020">2020</option>
                 </select>
+            </div>
+            <div className="treemap">
+                <svg ref={svgRef}></svg>
             </div>
         </div>
     );
