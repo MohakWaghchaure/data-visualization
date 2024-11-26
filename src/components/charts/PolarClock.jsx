@@ -23,7 +23,7 @@ const PolarClock = ({title, time}) => {
 
     // Function to render clock
     function render() {
-      const now = time ? new Date(time) : new Date();
+      const now = new Date();
       const hours = now.getHours().toString().padStart(2, "0");
       const minutes = now.getMinutes().toString().padStart(2, "0");
       const seconds = now.getSeconds().toString().padStart(2, "0");
@@ -56,7 +56,7 @@ const PolarClock = ({title, time}) => {
 
       paths
         .join("path")
-        .attr("fill", (d, i) => ["#79A3B1", "#FFD369", "#EEEEEE"][i])
+        .attr("fill", (d, i) => ["#79A3B1", "#EEEEEE", "#FFD369"][i])
         .attr("d", arc);
 
       // Update the central time display
@@ -68,8 +68,8 @@ const PolarClock = ({title, time}) => {
         .attr("text-anchor", "middle")
         .attr("dy", "0.35em")
         .style("font-size", "70px")
-        .style("font-weight", "600")
-        .style("fill", "#FFFFFF")
+        .style("color", "#EEEEEE")
+        .style("fill", "#FFD369")
         .text((d) => d);
     }
 

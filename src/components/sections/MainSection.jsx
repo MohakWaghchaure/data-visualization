@@ -64,7 +64,6 @@ export default function MainSection({selectedNavOption}) {
           <PolarClock title={'Japan Standard Time'} time={japanStandardTime}></PolarClock>
           <PolarClock title={'Australian Eastern Time'} time={australianEasternTime}></PolarClock>
         </div>
-        
       </div>
     </div>
   );
