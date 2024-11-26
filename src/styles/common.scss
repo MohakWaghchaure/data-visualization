@@ -3,7 +3,7 @@ $color2: #393E46;
 $color3: #FFD369;
 $color4: #EEEEEE;
 $color5: #000000;
-$color6: #79A3B1;
+$color6: #D0E8F2;
 $color7: #79A3B1;
 $color8: #456268;
 
@@ -192,7 +192,7 @@ body {
                     font-size: 1.8rem;
                     font-weight: 600;
                     text-align: left;
-                    color: $color6;
+                    color: $color7;
                     padding-bottom: 20px;
                 }
 
@@ -303,6 +303,7 @@ body {
                     }
                     
                 }
+
                 .word-cloud-wrapper {
                     .cloud-container{
                         padding: 40px 40px;
@@ -384,6 +385,10 @@ body {
                             }
                         }
                     }
+                }
+                
+                .treemap-wrapper{
+                    
                 }
             }
 
