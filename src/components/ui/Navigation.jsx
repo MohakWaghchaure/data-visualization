@@ -47,9 +47,9 @@ export default function Navigation() {
                         <div className="icon-wrap"><Image src={Clock} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Polar Clock</div>
                     </div>
-                    {/* <div className={(navOption=='dataTable')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('dataTable')}>
+                    {/* <div className={(navOption=='sunburst')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('sunburst')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
-                        <div className="nav-text">Datasets</div>
+                        <div className="nav-text">Sunburst</div>
                     </div> */}
                 </div>
                 <div className="about-button active" onMouseDown={() => handleScroll('aboutProject')}>
