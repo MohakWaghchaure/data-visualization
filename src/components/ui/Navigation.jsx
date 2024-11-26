@@ -36,14 +36,14 @@ export default function Navigation() {
                         <div className="icon-wrap"><Image src={treemap} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Tree Map</div>
                     </div>
-                    <div className={(navOption=='stackedBarChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedBarChart')}>
+                    {/* <div className={(navOption=='stackedBarChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedBarChart')}>
                         <div className="icon-wrap"><Image src={stackedBarIcon} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Stacked Bar Chart</div>
                     </div>
                     <div className={(navOption=='stackedAreaChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedAreaChart')}>
                         <div className="icon-wrap"><Image src={barChart} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Diverging Bar Chart</div>
-                    </div>
+                    </div> */}
                     <div className={(navOption=='wordCloud')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('wordCloud')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Word Cloud</div>

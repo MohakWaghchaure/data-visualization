@@ -386,9 +386,34 @@ body {
                         }
                     }
                 }
-                
+
                 .treemap-wrapper{
-                    
+                    text-align: center;
+                    .treemap{
+
+                    }
+                    .treemap-controls{
+                        padding: 20px 20px;
+                        width: 100%;
+                        label{
+                            font-size: 1rem;
+                            width: 100px;
+                            color: $color4;
+                            font-weight: 600;
+                        }
+                        select {
+                            height: 40px;
+                            width: 100px;
+                            text-decoration: none;
+                            background-color: $color8;
+                            border: 0px;
+                            border-radius: 5px;
+                            padding: 0px 5px;
+                            font-size: 1rem;
+                            color: $color4;
+                            font-weight: 600;
+                        }
+                    }
                 }
             }
 
