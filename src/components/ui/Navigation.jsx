@@ -5,6 +5,7 @@ import stackedBarIcon from '../../public/icons/stacked-bar.png';
 import barChart from '../../public/icons/bar-chart.png';
 import clouds from '../../public/icons/clouds.png';
 import Clock from '../../public/icons/clock.png';
+import treemap from '../../public/icons/treemap-chart.png';
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
@@ -30,6 +31,10 @@ export default function Navigation() {
                     <div className={(navOption=='mapComponent')? "nav-menu active" : "nav-menu"} onClick={() => handleScroll('mapComponent')} >
                         <div className="icon-wrap"><Image src={mapIcon} height={20} width={20} alt={'map'}></Image></div>
                         <div className="nav-text">Map View</div>
+                    </div>
+                    <div className={(navOption=='treemap')? "nav-menu active" : "nav-menu"} onClick={() => handleScroll('treemap')} >
+                        <div className="icon-wrap"><Image src={treemap} height={20} width={20} alt={'map'}></Image></div>
+                        <div className="nav-text">Tree Map</div>
                     </div>
                     <div className={(navOption=='stackedBarChart')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('stackedBarChart')}>
                         <div className="icon-wrap"><Image src={stackedBarIcon} height={20} width={20} alt={'map'}></Image></div>

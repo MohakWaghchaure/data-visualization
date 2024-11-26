@@ -35,6 +35,11 @@ export default function MainSection({ selectedNavOption }) {
         <div className="description">Discover an interactive map that visualizes U.S. state population estimates from 2020 to 2023! With intuitive features like zoom, click, hover, and pan, easily explore state-wise demographic trends. This tool offers a detailed and insightful perspective on population shifts across the nation over the past few years.</div>
         <MapComponent></MapComponent>
       </div>
+      <div className="chart-wrapper" id="treemap">
+        <div className="title">Treemap</div>
+        <div className="description"></div>
+        <Treemap></Treemap>
+      </div>
       {/* <div className="chart-wrapper" id="stackedBarChart">
         <div className="title">Stacked Bar Chart</div>
         <div className="description">Explore an interactive map showcasing U.S. state population estimates from 2020 to 2023! With features like zoom, click, hover, and pan, you can effortlessly navigate and compare state-wise demographic trends. Powered by reliable and up-to-date datasets, this tool provides a clear and insightful view of population changes across the country over recent years.</div>
@@ -45,11 +50,6 @@ export default function MainSection({ selectedNavOption }) {
         <div className="description">Explore an interactive map showcasing U.S. state population estimates from 2020 to 2023! With features like zoom, click, hover, and pan, you can effortlessly navigate and compare state-wise demographic trends. Powered by reliable and up-to-date datasets, this tool provides a clear and insightful view of population changes across the country over recent years.</div>
         <StackedAreaChart></StackedAreaChart>
       </div> */}
-      <div className="chart-wrapper" id="wordCloud">
-        <div className="title">Treemap</div>
-        <div className="description"></div>
-        <Treemap></Treemap>
-      </div>
       <div className="chart-wrapper" id="wordCloud">
         <div className="title">Word Cloud Visualization</div>
         <div className="description">Explore an interactive Word Cloud that visually represents a collection of words with varying sizes and colors. The words' sizes reflect their importance or frequency, while the colors add visual distinction.</div>
