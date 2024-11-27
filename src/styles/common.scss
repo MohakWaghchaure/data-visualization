@@ -416,6 +416,17 @@ body {
                         }
                     }
                 }
+                .bar-charts{
+                    .bar-chart-wrapper{
+                        padding: 20px 0px;
+                        .title{
+                            font-size: 1.2rem;
+                            text-align: center;
+                            color: $color3;
+                        }
+                    }
+                }
+                
             }
 
         }
