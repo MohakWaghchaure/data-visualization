@@ -79,7 +79,7 @@ export default function MainSection({ }) {
   return (
     <div className="main-wrapper">
       <div className="chart-wrapper" id="overview">
-        <div className="title">Welcome to the Data Visualization Showcase</div>
+        <h1 className="title">Welcome to the Data Visualization Showcase</h1>
         <div className="project-description-wrapper">
           <div className="project-description">
             <div className="text">This project highlights the power of D3.js in crafting engaging and insightful visualizations. The core focus is on U.S. state population data (2020–2023), represented through various visualizations such as maps, treemaps, and bar charts.</div>
