@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Navigation from "../components/ui/Navigation";
 import MainSection from "../components/sections/MainSection";
@@ -26,15 +26,21 @@ export default function Home() {
 
   const [selectedNav, getSelectedNav] = useState('');
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.log("selectedNav", selectedNav);
-  },[selectedNav])
+  }, [selectedNav])
   return (
-    <div className="page-wrapper">
-      <div className="container-fluid page-container">
-        <Navigation></Navigation>
-        <MainSection></MainSection>
+    <Fragment>
+      <div className="small-screen-wrapper">
+        <div className="text">Please use large resolution screen for better experience</div>
       </div>
-    </div>
+      <div className="page-wrapper">
+        <div className="container-fluid page-container">
+          <Navigation></Navigation>
+          <MainSection></MainSection>
+        </div>
+      </div>
+    </Fragment>
+
   );
 }

@@ -22,12 +22,31 @@ body {
     color: $color4;
 }
 
+.small-screen-wrapper{
+    display: none;
+    @media screen and (max-width: 992px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        .text{
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $color6;
+
+        }
+    }
+}
 .page-wrapper {
     background-color: $color5;
-
+    display: block;
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
     .page-container {
         display: flex;
-
+        
         .nav-wrapper {
             height: 100vh;
             width: auto;
