@@ -504,6 +504,20 @@ body {
                 background-color: $color1;
             }
 
+            .footer {
+                .text{
+                    color: $color6;
+                    font-size: 1rem;
+                    padding: 40px;
+                    text-align: center;
+                    width: 100%;
+                    a{
+                        color: $color6;
+                        font-weight: 600;
+                        text-decoration: none;
+                    }
+                }
+            }
         }
     }
 }

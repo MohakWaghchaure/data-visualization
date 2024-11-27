@@ -150,6 +150,10 @@ export default function MainSection({ }) {
           <PolarClock title={'New Zealand Standard Time (NZST)'} timeZone={'Pacific/Auckland'}></PolarClock>
         </div>
       </div>
+      <div className="line-seperater"></div>
+      <div className="footer">
+        <div className="text">Designed &amp; Built by <a href="https://mohakwaghchaure.github.io/portfolio/" target="_blank">Mohak Sunil Waghchaure</a></div>
+      </div>
     </div>
   );
 }
