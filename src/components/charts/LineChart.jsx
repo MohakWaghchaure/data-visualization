@@ -126,17 +126,19 @@ const LineChart = () => {
 
     // Custom colors for each region (you can modify this array)
     const regionColors = {
-      "Northeast Region": "#FFD369", // Blue
-      "New England": "#FFD369", // Orange
-      "Middle Atlantic": "#FFD369", // Green
-      "Midwest Region": "#FFD369", // Red
-      "South Region": "#EEEEEE", // Purple
-      "South Atlantic": "#EEEEEE", // Brown
-      "East South Central": "#EEEEEE", // Pink
-      "West South Central": "#EEEEEE", // Grey
-      "West Region": "#79A3B1", // Lime
-      "Mountain": "#79A3B1", // Cyan
-      "Pacific": "#79A3B1", // Yellow
+      "Northeast Region": "#FFD369",
+      "New England": "#FFD369",
+      "Middle Atlantic": "#FFD369",
+      "Midwest Region": "#FFD369",
+      "East North Central": "#FFD369",
+      "West North Central": "#EEEEEE",
+      "South Region": "#EEEEEE",
+      "South Atlantic": "#EEEEEE",
+      "East South Central": "#EEEEEE",
+      "West South Central": "#79A3B1",
+      "West Region": "#79A3B1",
+      "Mountain": "#79A3B1",
+      "Pacific": "#79A3B1",
     };
 
     // Set up the scales
