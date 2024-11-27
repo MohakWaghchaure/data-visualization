@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MapComponent from "../charts/MapComponent";
-import StackedAreaChart from "../charts/StackedAreaChart";
+import LineChart from "../charts/LineChart";
 import StackedBarChart from "../charts/StackedBarChart";
 import WordCloud from "../charts/WordCloud";
 import PolarClock from "../charts/PolarClock";
@@ -96,10 +96,10 @@ export default function MainSection({ }) {
         <div className="description">Explore an interactive map showcasing U.S. state population estimates from 2020 to 2023! With features like zoom, click, hover, and pan, you can effortlessly navigate and compare state-wise demographic trends. Powered by reliable and up-to-date datasets, this tool provides a clear and insightful view of population changes across the country over recent years.</div>
         <StackedBarChart populationData2020={populationData2020} populationData2021={populationData2021} populationData2022={populationData2022} populationData2023={populationData2023}></StackedBarChart>
       </div>
-      <div className="chart-wrapper" id="stackedAreaChart">
+      <div className="chart-wrapper" id="lineChart">
         <div className="title">Stacked Area Chart</div>
         <div className="description">Explore an interactive map showcasing U.S. state population estimates from 2020 to 2023! With features like zoom, click, hover, and pan, you can effortlessly navigate and compare state-wise demographic trends. Powered by reliable and up-to-date datasets, this tool provides a clear and insightful view of population changes across the country over recent years.</div>
-        <StackedAreaChart></StackedAreaChart>
+        <LineChart populationData2020={populationData2020} populationData2021={populationData2021} populationData2022={populationData2022} populationData2023={populationData2023}></LineChart>
       </div>
       <div className="chart-wrapper" id="wordCloud">
         <div className="title">Word Cloud Visualization</div>
