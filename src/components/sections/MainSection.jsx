@@ -70,12 +70,6 @@ export default function MainSection({ }) {
     { state: "Ohio", population: 11683591 }
   ];
 
-  const getTimeInZone = (utcOffset) => {
-    const localOffset = new Date().getTimezoneOffset() / 60; // in hours, with opposite sign
-    const offsetDifference = utcOffset - localOffset; // difference between the current local offset and the target UTC offset
-    return new Date(Date.now() + offsetDifference * 60 * 60 * 1000); // adjust the time based on the difference
-  };
-
   return (
     <div className="main-wrapper">
       <div className="chart-wrapper" id="overview">

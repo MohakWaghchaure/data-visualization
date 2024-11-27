@@ -24,11 +24,6 @@ export default function Home() {
   //   fetchLambda();
   // }, [])
 
-  const [selectedNav, getSelectedNav] = useState('');
-
-  useEffect(() => {
-    // console.log("selectedNav", selectedNav);
-  }, [selectedNav])
   return (
     <Fragment>
       <div className="small-screen-wrapper">
