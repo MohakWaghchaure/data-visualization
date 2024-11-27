@@ -43,7 +43,7 @@ const MapComponent = () => {
 
         // Fetch the counties GeoJSON file (TopoJSON format)
         d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then((data) => {
-            console.log("new data", data);
+            // console.log("new data", data);
             const states = topojson.feature(data, data.objects.states).features;
 
 

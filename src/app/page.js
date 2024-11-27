@@ -23,7 +23,9 @@ export default function Home() {
   //   };
   //   fetchLambda();
   // }, [])
-
+  
+  const [selectedNav, setSelectedNav] = useState('');
+  
   return (
     <Fragment>
       <div className="small-screen-wrapper">
@@ -31,8 +33,8 @@ export default function Home() {
       </div>
       <div className="page-wrapper">
         <div className="container-fluid page-container">
-          <Navigation></Navigation>
-          <MainSection></MainSection>
+          <Navigation selectedNav={selectedNav}></Navigation>
+          <MainSection setSelectedNav={setSelectedNav}></MainSection>
         </div>
       </div>
     </Fragment>
