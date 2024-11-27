@@ -9,10 +9,9 @@ import treemap from '../../public/icons/treemap-chart.png';
 import stackedBarChart from '../../public/icons/stacked-bar-chart.png';
 import Image from 'next/image';
 import { useEffect, useState } from "react";
-import Link from 'next/link';
 
 export default function Navigation() {
-    const [navOption, setNavOption] = useState('mapComponent');
+    const [navOption, setNavOption] = useState('overview');
     const handleScroll = (sectionAnchor) => {
         if(sectionAnchor){
             setNavOption(sectionAnchor);
@@ -59,8 +58,8 @@ export default function Navigation() {
                         <div className="nav-text">Polar Clock</div>
                     </div>
                 </div>
-                <div className="about-button active" onMouseDown={() => handleScroll('aboutProject')}>
-                    <button className={(navOption=='aboutProject')? "about-button active" : "about-button"}>About this project</button>
+                <div className="about-button active" onMouseDown={() => handleScroll('overview')}>
+                    <button className={(navOption=='overview')? "about-button active" : "about-button"}>About this project</button>
                 </div>
             </div>
         </div>

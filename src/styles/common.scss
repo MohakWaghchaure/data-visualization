@@ -170,8 +170,72 @@ body {
             .chart-wrapper {
                 padding: 40px 40px;
                 text-align: center;
-                min-height: 100%;
-
+                min-height: 100vh;
+                .project-description-wrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    padding-top: 20px;
+                    .project-description{
+                        width: 50%;
+                        text-align: left;
+                        .text{
+                            font-size: 1.2rem;
+                            padding: 20px 0px;
+                            line-height: 2rem;
+                        }
+                    }
+                    .snaps-wrapper{
+                        position: relative;
+                        width: 100%;
+                        min-height: 450px;
+                        .snapshot{
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            border-radius: 5px;
+                            padding: 10px 10px;
+                            border: 5px solid $color8;
+                            background-color: #000000;
+                            box-shadow: $color8 0px 10px 36px 0px, $color8 0px 0px 0px 1px;
+                            transition: 0.2s;
+                            cursor: pointer;
+                            &.one{
+                                top: 0%;
+                                left: 40%;
+                                &:hover{
+                                    transition: 0.2s;
+                                    transform: rotate(5deg) scale(1.1);
+                                }
+                                
+                            }
+                            &.two{
+                                top: 25%;
+                                left: 20%;
+                                &:hover{
+                                    transition: 0.2s;
+                                    transform: rotate(-5deg) scale(1.1);
+                                }
+                            }
+                            &.three{
+                                top: 50%;
+                                left: 40%;
+                                &:hover{
+                                    transition: 0.2s;
+                                    transform: rotate(5deg) scale(1.1);
+                                }
+                            }
+                            &.four{
+                                top: 75%;
+                                left: 20%;
+                                &:hover{
+                                    transition: 0.2s;
+                                    transform: rotate(-5deg) scale(1.1);
+                                }
+                            }
+                        }
+                    }
+                }
                 .table-wrapper {
                     .table {
                         border: 1px solid $color2;
