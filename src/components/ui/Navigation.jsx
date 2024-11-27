@@ -49,6 +49,7 @@ export default function Navigation() {
                         <div className="icon-wrap"><Image src={linePlot} height={20} width={20} alt={'linePlot'}></Image></div>
                         <div className="nav-text">Line Plot</div>
                     </div>
+                    <div className='seperater'></div>
                     <div className={(navOption=='wordCloud')? "nav-menu active" : "nav-menu"} onMouseDown={() => handleScroll('wordCloud')}>
                         <div className="icon-wrap"><Image src={clouds} height={20} width={20} alt={'wordCloud'}></Image></div>
                         <div className="nav-text">Word Cloud</div>
