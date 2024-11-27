@@ -52,6 +52,22 @@ const StackedBarChart = ({ populationData2020, populationData2021, populationDat
     // Stack data
     const stack = d3.stack().keys(keys)(data);
 
+    // Create a div for the tooltip and style it
+    const tooltip = d3
+      .select(chartRef.current)
+      .append("div")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("background-color", "#222831")
+      .style("border", "2px solid #79A3B1")
+      .style("color", "#EEEEEE")
+      .style("padding", "5px")
+      .style("text-align", "left")
+      .style("font-size", "0.8rem")
+      .style("font-weight", "600")
+      .style("border-radius", "3px")
+      .style("pointer-events", "none");
+
     // Add bars for stacking per state
     svg
       .append("g")
@@ -65,7 +81,19 @@ const StackedBarChart = ({ populationData2020, populationData2021, populationDat
       .attr("x", (d) => x(d.data.state))
       .attr("y", (d) => y(d[1])) // Y position should be stacked
       .attr("height", (d) => y(d[0]) - y(d[1])) // Height based on stacked values
-      .attr("width", x.bandwidth());
+      .attr("width", x.bandwidth())
+      .on("mouseover", (event, d) => {
+        // Show the tooltip when hovering over a bar
+        tooltip
+          .style("visibility", "visible")
+          .text(`Population: ${d[1] - d[0]}`) // Display the population value for that block
+          .style("top", `${event.pageY + 10}px`) // Position the tooltip based on mouse position
+          .style("left", `${event.pageX + 10}px`);
+      })
+      .on("mouseout", () => {
+        // Hide the tooltip when mouse leaves the bar
+        tooltip.style("visibility", "hidden");
+      });
 
     // Add axes
     svg
@@ -95,7 +123,7 @@ const StackedBarChart = ({ populationData2020, populationData2021, populationDat
       .append("text")
       .attr("x", 30) // Adjust horizontal space between rectangle and text
       .attr("y", 12) // Positioning the text vertically at the center of the rectangle
-      .style("font-size", "12px") // Font size for readability
+      .style("font-size", "0.8rem") // Font size for readability
       .style("fill", "#EEEEEE")
       .style("font-weight", "600")
       .text((d) => `${d}`); // Add year as label
