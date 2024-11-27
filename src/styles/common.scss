@@ -166,7 +166,7 @@ body {
             overflow-y: auto;
             background-color: $color5;
 
-            // overflow: hidden;
+            // overflow-x: hidden;
             .chart-wrapper {
                 padding: 40px 40px;
                 text-align: center;
@@ -518,6 +518,11 @@ body {
                     }
                 }
 
+            }
+            .line-seperater{
+                height: 2px;
+                margin: 0px 40px;
+                background-color: $color1;
             }
 
         }

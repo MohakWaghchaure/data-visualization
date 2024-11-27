@@ -90,21 +90,23 @@ export default function MainSection({ }) {
             <div className="snapshot two"><Image src={stackedChartView} height={170} width={280} alt={'stackedChartView'}></Image></div>
             <div className="snapshot three"><Image src={polarClockView} height={170} width={280} alt={'polarClockView'}></Image></div>
             <div className="snapshot four"><Image src={wordCloudView} height={170} width={280} alt={'wordCloudView'}></Image></div>
-            
+
           </div>
         </div>
-
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="mapComponent">
         <div className="title">Exploring U.S. State Populations (2020–2023)</div>
         <div className="description">This map dynamically visualizes state populations with interactive zoom, hover, and pan features. Users can explore population density and trends by interacting with each state for additional data insights.</div>
         <MapComponent></MapComponent>
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="treemap">
         <div className="title">Population Distribution by States and Regions</div>
         <div className="description">A hierarchical treemap displays U.S. states sized by population. The proportional rectangles and color gradients reveal demographic trends, making it easy to identify population-heavy states at a glance.</div>
         <Treemap></Treemap>
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="barChart">
         <div className="title">Comparative Analysis of State Populations</div>
         <div className="description">A bar chart comparing state populations across different years. It visualizes growth or decline trends in population data.</div>
@@ -112,23 +114,26 @@ export default function MainSection({ }) {
           <BarChart data={populationData2020} title={'Poplulation 2020'}></BarChart>
           <BarChart data={populationData2022} title={'Poplulation 2022'}></BarChart>
         </div>
-
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="stackedBarChart">
         <div className="title">Multi-Year Population Data in States</div>
         <div className="description">A stacked bar chart presenting a detailed breakdown of population changes across years for each state. The color-coded sections enhance clarity for year-by-year comparison within a state.</div>
         <StackedBarChart populationData2020={populationData2020} populationData2021={populationData2021} populationData2022={populationData2022} populationData2023={populationData2023}></StackedBarChart>
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="lineChart">
         <div className="title">Temporal Population Trends</div>
         <div className="description">A line graph presenting population growth or decline trends over time for U.S. states. This helps users observe patterns clearly and intuitively.</div>
         <LineChart populationData2020={populationData2020} populationData2021={populationData2021} populationData2022={populationData2022} populationData2023={populationData2023}></LineChart>
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="wordCloud">
         <div className="title">Frequency Insights Through Word Clouds</div>
         <div className="description">A word cloud showcasing the frequency of terms in a dataset. The font size and color variations highlight the prominence of specific terms.</div>
         <WordCloud></WordCloud>
       </div>
+      <div className="line-seperater"></div>
       <div className="chart-wrapper" id="polarClock">
         <div className="title">Global Time Zones in an Animated Clock</div>
         <div className="description">An animated circular clock representation of global time zones, aiding in visualizing time relationships between regions.</div>
