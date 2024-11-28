@@ -28,7 +28,7 @@ export default function Navigation({ selectedNav }) {
             <div className="btn-expand"></div>
             <div className="nav-container">
                 <div className="logo-wrapper">
-                    <div className="logo-text">ClearCharts</div>
+                    <div className="logo-text">LucidPlots</div>
                 </div>
                 <div className="nav-options-wrapper">
                     <div className={(selectedNav=='mapComponent')? "nav-menu active" : "nav-menu"} onClick={() => handleScroll('mapComponent')} >

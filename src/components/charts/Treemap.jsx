@@ -28,9 +28,20 @@ const Treemap = () => {
     useEffect(() => {
         if (!data) return; // Prevent running D3 code before the data is available
 
-        // Set up the dimensions for the treemap
-        const width = 1000;
-        const height = 600;
+        let width = 0;
+        let height = 0;
+        if (window.innerWidth < 1200) {
+            width = 700;
+            height = 500;
+        }
+        else if (window.innerWidth < 1400) {
+            width = 800;
+            height = 500;
+        }
+        else {
+            width = 1000;
+            height = 600;
+        }
 
         const svg = d3.select(svgRef.current)
             .attr('width', width)

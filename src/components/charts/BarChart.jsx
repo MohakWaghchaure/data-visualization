@@ -5,8 +5,17 @@ const BarChart = ({ data, title }) => {
     const svgRef = useRef(null);
 
     useEffect(() => {
-        const width = 800;
-        const height = 400;
+        
+        let width = 0; 
+        let height = 0;
+        if(window.innerWidth < 1100){
+          width = 600;
+          height = 400;
+        }
+        else{
+          width = 800;
+          height = 400;
+        }
         const margin = { top: 20, right: 30, bottom: 40, left: 100 };
 
         const svg = d3.select(svgRef.current)
@@ -70,7 +79,7 @@ const BarChart = ({ data, title }) => {
     }, [data]);
 
     return (
-        <div className='col-lg-6 bar-chart-wrapper'>
+        <div className='bar-chart-wrapper'>
             <div className='title'>{title}</div>
             <div>
                 <svg ref={svgRef}></svg>

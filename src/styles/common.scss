@@ -20,6 +20,7 @@ body {
     font-size: 16.5%;
     box-sizing: border-box;
     color: $color4;
+    --bs-body-color: $color4;
 }
 
 .small-screen-wrapper{
@@ -46,7 +47,7 @@ body {
     }
     .page-container {
         display: flex;
-        
+        padding: 0px;
         .nav-wrapper {
             height: 100vh;
             width: auto;
@@ -174,6 +175,9 @@ body {
                     align-items: center;
                     justify-content: start;
                     padding-top: 20px;
+                    @media screen and (max-width: 1200px) {
+                        align-items: start;
+                    }
                     .project-description{
                         width: 50%;
                         text-align: left;
@@ -281,10 +285,15 @@ body {
                     display: flex;
                     align-items: start;
                     justify-content: start;
-
+                    @media screen and (max-width: 1400px) {
+                        display: block;
+                    }
                     .map-container {
                         border: 2px solid $color6;
                         border-radius: 5px;
+                        #us-map{
+                            overflow: hidden;
+                        }
                     }
 
                     .data-wrapper {
@@ -292,11 +301,13 @@ body {
                         border-radius: 5px;
                         margin-left: 25px;
                         padding: 20px 25px;
-                        min-width: 320px;
+                        width: 320px;
                         position: relative;
                         text-align: left;
                         background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
-
+                        @media screen and (max-width: 1400px) {
+                            margin: 25px 0px;
+                        }
                         .selection-overlay {
                             position: absolute;
                             top: 0;
@@ -350,16 +361,16 @@ body {
                 }
 
                 .clock-wrapper {
-                    display: flex;
+                   
 
                     .clock-container {
                         text-align: center;
                         display: block;
                         padding: 20px 20px;
-
+                        min-height: 100%;
                         .timezone {
                             font-size: 1.1rem;
-                            // background-color: $color7;
+                            min-height: 80px;
                             color: $color7;
                             text-align: center;
                             width: 100%;
@@ -370,8 +381,7 @@ body {
                         }
 
                         .clock {
-                            height: 250px;
-                            width: 250px;
+                            text-align: center;
                             border: 2px solid $color2;
                             border-radius: 50%;
                             background: radial-gradient(circle, $color8 0%, $color5 100%);
@@ -400,7 +410,6 @@ body {
                             text-align: left;
                             background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
                             max-height: fit-content;
-
                             div {
                                 font-size: 1.2rem;
                                 color: $color4;
@@ -429,7 +438,7 @@ body {
                             position: relative;
                             text-align: left;
                             background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(16, 19, 23) 100%);
-
+                            margin-left: 40px;
                             .title {
                                 font-size: 1.2rem;
                                 color: $color4;
@@ -518,7 +527,7 @@ body {
 
             }
             .line-seperater{
-                height: 2px;
+                height: 1px;
                 margin: 0px 40px;
                 background-color: $color1;
             }

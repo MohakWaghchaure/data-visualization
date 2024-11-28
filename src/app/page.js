@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from "../components/ui/Navigation";
 import MainSection from "../components/sections/MainSection";
 
@@ -25,6 +26,7 @@ export default function Home() {
   // }, [])
   
   const [selectedNav, setSelectedNav] = useState('');
+  
   
   return (
     <Fragment>

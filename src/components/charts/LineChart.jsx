@@ -101,8 +101,18 @@ const LineChart = () => {
 
   useEffect(() => {
     const margin = { top: 20, right: 30, bottom: 40, left: 60 };
-    const width = 800 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    let width = 0; 
+    let height = 0;
+    if(window.innerWidth < 1100){
+      width = 500 - margin.left - margin.right;
+      height = 500 - margin.top - margin.bottom;
+    }
+    else{
+      width = 800 - margin.left - margin.right;
+      height = 600 - margin.top - margin.bottom;
+    }
+    
+    height = 600 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)

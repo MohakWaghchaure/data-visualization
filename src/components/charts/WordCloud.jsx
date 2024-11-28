@@ -113,8 +113,16 @@ const WordCloud = () => {
     // Clear previous word cloud
     d3.select(chartRef.current).selectAll("*").remove();
 
-    const width = 800;
-    const height = 400;
+    let width = 0; 
+    let height = 0;
+    if(window.innerWidth < 1200){
+      width = 600;
+      height = 400;
+    }
+    else{
+      width = 800;
+      height = 400;
+    }
 
     const layout = cloud()
       .size([width, height])

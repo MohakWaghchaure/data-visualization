@@ -10,8 +10,17 @@ const MapComponent = () => {
     const [selectedStateData, setSelectedStateData] = useState([]);
     useEffect(() => {
         // Map dimensions
-        const width = 850;
-        const height = 500;
+
+        let width = 0;
+        let height = 0;
+        if (window.innerWidth < 1400) {
+            width = 1200;
+            height = 400;
+        }
+        else {
+            width = 850;
+            height = 500;
+        }
 
         // Create a projection for the map (Albers USA projection)
         const projection = d3.geoAlbersUsa().scale(1000).translate([width / 2, height / 2]);
@@ -100,7 +109,7 @@ const MapComponent = () => {
             // Create a zoom behavior that handles both zoom and pan
             const zoom = d3
                 .zoom()
-                .scaleExtent([1, 8]) // Set limits for zoom scale (1 = normal, 8 = maximum zoom)
+                .scaleExtent([0.8, 8]) // Set limits for zoom scale (1 = normal, 8 = maximum zoom)
                 .on("zoom", (event) => {
                     // Apply the transformation (scaling and translation) to the map group
                     mapGroup.attr("transform", event.transform); // Apply zoom and pan transformation

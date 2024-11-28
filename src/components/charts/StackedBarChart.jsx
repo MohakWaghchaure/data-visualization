@@ -20,11 +20,18 @@ const StackedBarChart = ({ populationData2020, populationData2021, populationDat
 
   useEffect(() => {
     // Clear any existing SVG content
-    d3.select(chartRef.current).selectAll("*").remove();
+    d3.select(chartRef.current).selectAll("*").remove();    
 
-    // Define dimensions
-    const width = 800;
-    const height = 400;
+    let width = 0; 
+    let height = 0;
+    if(window.innerWidth < 1100){
+      width = 600;
+      height = 400;
+    }
+    else{
+      width = 800;
+      height = 400;
+    }
     const margin = { top: 20, right: 100, bottom: 30, left: 100 }; // Increased right margin for legend space
 
     // Create scales

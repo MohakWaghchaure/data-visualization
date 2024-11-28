@@ -164,17 +164,15 @@ export default function MainSection({ setSelectedNav }) {
       <div className="chart-wrapper target" id="polarClock">
         <div className="title">Global Time Zones in an Animated Clock</div>
         <div className="description">An animated circular clock representation of global time zones, aiding in visualizing time relationships between regions.</div>
-        <div className="clock-wrapper">
-          <PolarClock title={'Eastern Time (ET)'} timeZone={'America/New_York'}></PolarClock>
-          <PolarClock title={'Greenwich Mean Time (GMT)'} timeZone={'Europe/London'}></PolarClock>
-          <PolarClock title={'Japan Standard Time (JST)'} timeZone={'Asia/Tokyo'}></PolarClock>
-          <PolarClock title={'Indian Standard Time (IST)'} timeZone={'Asia/Kolkata'}></PolarClock>
-        </div>
-        <div className="clock-wrapper">
-          <PolarClock title={'Australian Eastern Standard Time (AEST)'} timeZone={'Australia/Sydney'}></PolarClock>
-          <PolarClock title={'South Africa Standard Time (SAST)'} timeZone={'Africa/Johannesburg'}></PolarClock>
-          <PolarClock title={'Brasília Time (BRT)'} timeZone={'America/Sao_Paulo'}></PolarClock>
-          <PolarClock title={'New Zealand Standard Time (NZST)'} timeZone={'Pacific/Auckland'}></PolarClock>
+        <div className="row">
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Eastern Time (ET)'} timeZone={'America/New_York'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Greenwich Mean Time (GMT)'} timeZone={'Europe/London'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Japan Standard Time (JST)'} timeZone={'Asia/Tokyo'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Indian Standard Time (IST)'} timeZone={'Asia/Kolkata'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Australian Eastern Standard Time (AEST)'} timeZone={'Australia/Sydney'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'South Africa Standard Time (SAST)'} timeZone={'Africa/Johannesburg'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'Brasília Time (BRT)'} timeZone={'America/Sao_Paulo'}></PolarClock></div>
+          <div className="col-xl-3 col-lg-4 clock-wrapper"><PolarClock title={'New Zealand Standard Time (NZST)'} timeZone={'Pacific/Auckland'}></PolarClock></div>
         </div>
       </div>
       <div className="line-seperater"></div>
