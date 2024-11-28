@@ -170,6 +170,9 @@ body {
                 padding: 40px 40px;
                 text-align: center;
                 min-height: 100vh;
+                &.adj-height{
+                    min-height: auto;
+                }
                 .project-description-wrapper{
                     display: flex;
                     align-items: center;
@@ -279,6 +282,30 @@ body {
                     text-align: left;
                     padding-bottom: 40px;
                     color: $color4;
+                }
+                .conclusion{
+                    width: 100%;
+                    text-align: left;
+                    .title{
+                        font-size: 1.5rem;
+                        color: $color7;
+                        line-height: 2.5rem;
+                    }
+                    .conclution-text{
+                        font-size: 1.2rem;
+                        color: $color3;
+                        line-height: 2.5rem;
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                    .title-bottom{
+                        padding-top: 40px;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 1.2rem;
+                        color: $color7;
+                    }
                 }
 
                 .map-wrapper {

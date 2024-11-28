@@ -130,7 +130,7 @@ export default function MainSection({ setSelectedNav }) {
       <div className="line-seperater"></div>
       <div className="chart-wrapper target" id="treemap">
         <div className="title">Population Distribution by States and Regions</div>
-        <div className="description">A hierarchical treemap displays U.S. states sized by population. The proportional rectangles and color gradients reveal demographic trends, making it easy to identify population-heavy states at a glance.</div>
+        <div className="description">A hierarchical treemap displays U.S. regions and states sized by population. The proportional rectangles and color gradients reveal demographic trends, making it easy to identify population-heavy states at a glance.</div>
         <Treemap></Treemap>
       </div>
       <div className="line-seperater"></div>
@@ -151,8 +151,22 @@ export default function MainSection({ setSelectedNav }) {
       <div className="line-seperater"></div>
       <div className="chart-wrapper target" id="lineChart">
         <div className="title">Temporal Population Trends</div>
-        <div className="description">A line graph presenting population growth or decline trends over time for U.S. states. This helps users observe patterns clearly and intuitively.</div>
+        <div className="description">A line graph presenting population growth or decline trends over time for U.S. regions. This helps users observe patterns clearly and intuitively.</div>
         <LineChart populationData2020={populationData2020} populationData2021={populationData2021} populationData2022={populationData2022} populationData2023={populationData2023}></LineChart>
+      </div>
+      <div className="line-seperater"></div>
+      <div className="chart-wrapper adj-height">
+        <div className="conclusion">
+          <div className="title">Why Data Visualization is Crucial for Effective Web Application:</div>
+          <ul className="conclution-text">
+            <li><span>Improved Understanding:</span> Transforms complex data into easily digestible visuals, revealing trends and patterns.</li>
+            <li><span>Enhanced Engagement:</span> Interactive charts make data exploration more intuitive and engaging.</li>
+            <li><span>Faster Decision-Making:</span> Visuals enable quick identification of key insights for informed decisions.</li>
+            <li><span>Efficient Communication:</span> Presents information clearly, making complex data easier to understand.</li>
+            <li><span>Scalability & Real-Time Updates:</span> Handles large datasets and updates in real-time for a seamless experience.</li>
+          </ul>
+          <div className="title-bottom">Scroll down to explore some creative charts that can be achieved using D3.js.</div>
+        </div>
       </div>
       <div className="line-seperater"></div>
       <div className="chart-wrapper target" id="wordCloud">
